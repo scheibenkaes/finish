@@ -1,4 +1,5 @@
 function saveTasksToLocalStorage (tasks) {
+    $.jStorage.deleteKey("Finish");
     $.jStorage.set("Finish", tasks);
 }
 
@@ -70,6 +71,24 @@ function checkNewTask () {
         Finish = addTask(Finish, t);
     }
     return r;
+}
+
+function checkDeleteTask () {
+    var task = $("#tasks-to-delete").val();
+    var idx = jQuery.inArray(task, Finish.openTasks);
+    if (idx != -1) {
+        Finish.openTasks.splice(idx, 1);
+        saveTasksToLocalStorage(Finish);
+    }
+}
+
+function onDeleteTaskPageShown (event) {
+    var select = $("#tasks-to-delete");
+    select.empty();
+    jQuery.each(Finish.openTasks.sort(), function(idx, v){
+        select.append($("<option>", {text: v, value: v}));
+    });
+    select.selectmenu('refresh');
 }
 
 var Finish = {

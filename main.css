@@ -1,0 +1,11 @@
+
+.active-task {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.active-task-done {
+    text-decoration: line-through;
+}
+
+
