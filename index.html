@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>My Page</title> 
+	<title>Finish what you started.</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
@@ -11,19 +11,21 @@
 
 <div data-role="page" id="main-page">
 
-	<div data-role="header">
-		<h1>Finish what you started</h1>
+	<div data-role="header" data-theme="a">
+		<h1>Startseite</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
         <fieldset class="ui-grid-a">
-            <div class="ui-block-a"><button data-theme="a">TODO-Liste</button></div>
-            <div class="ui-block-b"><button data-theme="a">Einstellungen</button></div>
+            <div class="ui-block-a"><a href="index.html#list-page" data-theme="a" data-role="button" data-icon="grid">TODO-Liste</a></div>
+            <div class="ui-block-b">
+                <a href="index.html#settings" data-role="button" data-icon="gear">Einstellungen</a>
+            </div>
         </fieldset>
 	</div><!-- /content -->
 
 </div><!-- /page -->
-<div data-role="page">
+<div data-role="page" id="list-page">
 
 	<div data-role="header">
 		<h1>My Title</h1>
