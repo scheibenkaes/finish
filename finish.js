@@ -37,7 +37,10 @@ function readTasksFromLocalStorage () {
 // Business
 
 function addTask (finish, task) {
-    finish.openTasks.push(task);
+    if (jQuery.inArray(task, finish.openTasks) == -1) {
+        finish.openTasks.push(task);
+    }
+    saveTasksToLocalStorage(finish);
     return finish;
 }
 
@@ -58,6 +61,16 @@ function isActiveTaskDone (finish) {
     return finish.currentTask == null;
 }
 
+function checkNewTask () {
+    var t = $("#new-task-name").val();
+    var r =  t != null && t.length >= 3;
+    if(!r) {
+        alert("Bitte einen Titel eingeben");
+    } else {
+        Finish = addTask(Finish, t);
+    }
+    return r;
+}
 
 var Finish = {
     currentTask: "Not doing shit",
