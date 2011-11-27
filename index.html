@@ -48,9 +48,10 @@
 
         <div id="open-todos-list-div" data-role="collapsible" data-theme="e">
             <h3>Offene TODOs</h3>
-            
-            <ul data-role="listview">
-                <li>Foo</li>
+            <ul data-role="listview" data-filter="true" id="open-todos-ul">
+                <li>Foo 
+                <a href="#" data-icon="star"></a>
+                </li>
             </ul>
         </div>
 
@@ -59,10 +60,10 @@
         <div data-role="navbar">
             <ul>
             	<li>
-            		<a href="#" data-icon="plus">Neu</a>
+            		<a href="#" data-icon="plus">Neues TODO</a>
             	</li>
                 <li>
-                	<a href="#" data-icon="home">Startseite</a>
+                	<a href="index.html" data-icon="home">Startseite</a>
                 </li>
                 <li>
                 	<a href="#" data-icon="gear">Einstellungen</a>
