@@ -28,8 +28,9 @@
 <div data-role="page" id="list-page">
 
 	<div data-role="header" data-position="inline">
-        <a href="index.html" data-icon="home">Start</a>
+        <a href="index.html" data-icon="home" data-iconpos="notext"></a>
 		<h1>Meine TODOs</h1>
+        <a href="index.html#settings" data-icon="gear" data-iconpos="notext"></a>
 	</div><!-- /header -->
 
 	<div data-role="content">	
@@ -41,7 +42,7 @@
                     <p id="cur-todo-label">Change ME</p>
                 </div>
                 <div class="ui-block-b">
-                    <p>Buttons</p>
+                    <button data-icon="check">Erledigt</button>
                 </div>
             </div>
         </div>
@@ -55,6 +56,14 @@
         </div>
 
 	</div><!-- /content -->
+    <div data-role="footer" data-position="fixed" class="ui-grid-a">
+        <div class="ui-block-a">
+            <button data-icon="plus">Neues TODO</button>
+        </div>
+        <div class="ui-block-b">
+            <button>TBD</button>
+        </div>
+    </div>
 
 </div><!-- /page -->
 
