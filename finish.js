@@ -14,7 +14,7 @@ function updateWithTasks (finish) {
 }
 
 function updateActiveTask (finish) {
-    $("#cur-todo-label").text(finish.currentTask);
+    $("#cur-todo-label").text(finish.currentTask || "Nichts zu tun");
 }
 
 function updateOpenTasks (finish) {
@@ -89,6 +89,12 @@ function onDeleteTaskPageShown (event) {
         select.append($("<option>", {text: v, value: v}));
     });
     select.selectmenu('refresh');
+}
+
+function onTaskDone () {
+    Finish.currentTask = null;
+    saveTasksToLocalStorage(Finish);
+    updateWithTasks(Finish);
 }
 
 var Finish = {
