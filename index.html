@@ -28,12 +28,32 @@
 <div data-role="page" id="list-page">
 
 	<div data-role="header" data-position="inline">
-        <a href="index.html" data-icon="home">Startseite</a>
+        <a href="index.html" data-icon="home">Start</a>
 		<h1>Meine TODOs</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>Hello world</p>		
+
+        <div id="selected-todo-div" data-theme="a" data-role="collapsible" data-collapsed="false">
+            <h3>Aktuelles TODO</h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <p id="cur-todo-label">Change ME</p>
+                </div>
+                <div class="ui-block-b">
+                    <p>Buttons</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="open-todos-list-div" data-role="collapsible" data-theme="e">
+            <h3>Offene TODOs</h3>
+            
+            <ul data-role="listview">
+                <li>Foo</li>
+            </ul>
+        </div>
+
 	</div><!-- /content -->
 
 </div><!-- /page -->
