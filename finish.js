@@ -21,7 +21,8 @@ function updateOpenTasks (finish) {
     var ul = $("#open-todos-ul");
     ul.empty();
     jQuery.each(finish.openTasks.sort(), function(idx, v) {
-        ul.append($("<li>", {text: v}));
+        var str = "<li data-icon='star'><a href='javascript:onTaskSelected(\"" + v + "\")'>"+ v +"</a></li>";
+        ul.append(str);
     });
     ul.listview('refresh');
 }
@@ -54,8 +55,19 @@ function makeTaskActive (finish, task) {
     var found = jQuery.inArray(task, finish.openTasks);
     if (found == -1) { throw "Unbekannte Aufgabe." }
     finish.currentTask = finish.openTasks[found];
-    finish.openTasks = finish.openTasks.splice(found, 1);
+    finish.openTasks.splice(found, 1);
     return finish;
+}
+
+function onTaskSelected (task) {
+    var dec = confirm(unescape("Soll '"+task+"' als aktive Aufgabe gew%E4hlt werden?"));
+    if (!dec) return;
+    if (Finish.currentTask != null) {
+        alert(unescape("Moment! Erst '" + Finish.currentTask + "' fertig machen und dann das n%E4chste anfangen!!!"));
+    } else {
+        var f = makeTaskActive(Finish, task);
+        updateWithTasks(f);
+    }
 }
 
 function isActiveTaskDone (finish) {
@@ -98,7 +110,7 @@ function onTaskDone () {
 }
 
 var Finish = {
-    currentTask: "Not doing shit",
+    currentTask: null,
     openTasks: []
 };
 
