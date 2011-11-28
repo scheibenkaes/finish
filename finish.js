@@ -42,7 +42,6 @@ function addTask (finish, task) {
     if (jQuery.inArray(task, finish.openTasks) == -1) {
         finish.openTasks.push(task);
     }
-    saveTasksToLocalStorage(finish);
     return finish;
 }
 
@@ -80,7 +79,16 @@ function checkNewTask () {
     if(!r) {
         alert("Bitte einen Titel eingeben");
     } else {
-        Finish = addTask(Finish, t);
+        var preemptive = $("#preemptive").val();
+        if (preemptive === "yes") {
+            var curTmp = Finish.currentTask;
+            if (curTmp !== null)
+                Finish = addTask(Finish, curTmp);
+            Finish.currentTask = t;
+        } else {
+            Finish = addTask(Finish, t);
+        }
+        saveTasksToLocalStorage(Finish);
     }
     return r;
 }
