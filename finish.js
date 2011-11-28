@@ -109,6 +109,13 @@ function onTaskDone () {
     updateWithTasks(Finish);
 }
 
+function onInfoPageShown (event) {
+    var p = $("#info-text");
+    $.get("README.md", function(data){
+        p.text(data);
+    });
+}
+
 var Finish = {
     currentTask: null,
     openTasks: []

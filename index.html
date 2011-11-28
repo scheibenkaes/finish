@@ -12,6 +12,7 @@
     <script type="text/javascript">
         $('#list-page').live('pageshow', onListPageShown);
         $('#delete-task').live('pageshow', onDeleteTaskPageShown);
+        $('#info').live('pageshow', onInfoPageShown);
     </script>
 </head> 
 <body> 
@@ -26,12 +27,23 @@
         <fieldset class="ui-grid-a">
             <div class="ui-block-a"><a href="index.html#list-page" data-theme="a" data-role="button" data-icon="grid">TODO</a></div>
             <div class="ui-block-b">
-                <a href="index.html#settings" data-role="button" data-icon="gear">Setup</a>
+                <a href="index.html#info" data-role="button" data-icon="info">Info</a>
             </div>
         </fieldset>
 	</div><!-- /content -->
 
 </div><!-- /page -->
+
+<div id="info" data-role="page">
+    <div data-role="header">
+        <a href="index.html" data-iconpos="notext" data-icon="home"></a>
+        <h1>Info</h1>
+    </div>
+    <div data-role="content data-role="content"">
+        <p id="info-text" data-theme="a"></p>
+    </div>
+</div>
+
 <div data-role="page" id="list-page">
 	<div data-role="header" data-position="inline">
         <a href="index.html" data-iconpos="notext" data-icon="home"></a>
@@ -68,10 +80,10 @@
         <div data-role="navbar">
             <ul>
             	<li>
-            		<a href="#new-task" data-icon="plus"></a>
+            		<a href="#new-task" data-rel="dialog" data-transition="slidedown" data-icon="plus"></a>
             	</li>
                 <li>
-                	<a href="#delete-task" data-icon="minus"></a>
+                	<a href="#delete-task" data-rel="dialog" data-icon="minus" data-transition="flip"></a>
                 </li>
             </ul>
         </div>
