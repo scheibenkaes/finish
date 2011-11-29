@@ -130,9 +130,11 @@ function onDeleteTaskPageShown (event) {
 }
 
 function onTaskDone () {
-    Finish.currentTask = null;
-    saveTasksToLocalStorage(Finish);
-    updateWithTasks(Finish);
+    if (confirm("Und Du bist Dir sicher, dass Du alles mit dieser Aufgabe verbundene erledigt hast?") === true) {
+        Finish.currentTask = null;
+        saveTasksToLocalStorage(Finish);
+        updateWithTasks(Finish);
+    }
 }
 
 function onInfoPageShown (event) {
