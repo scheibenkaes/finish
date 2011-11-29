@@ -40,7 +40,11 @@
         <h1>Info</h1>
     </div>
     <div data-role="content data-role="content"">
-        <p id="info-text" data-theme="a"></p>
+        <dl title="Info">
+            <dd>
+                <pre id="info-text" data-theme="a"></pre>
+            </dd>
+        </dl>
     </div>
 </div>
 
@@ -92,12 +96,12 @@
 </div><!-- /page -->
 
 <div data-role="page" id="new-task">
-    <div data-role="header"><h1>Neue Aufgabe anlegen</h1></div>
+    <div data-role="header"><h1>Neu</h1></div>
     <div data-role="content">
     
         <form>
             <div data-role="fieldcontain">
-                <label for="new-task-name">Titel</label>
+                <label for="new-task-name">Aufgabe</label>
                 <input type="text" id="new-task-name" name="new-task-name" />
             </div>
             <div data-role="fieldcontain">
@@ -127,11 +131,11 @@
     </div>
 </div>
 <div data-role="page" id="delete-task">
-    <div data-role="header"><h1>Aufgaben entfernen</h1></div>
+    <div data-role="header"><h1>Entfernen</h1></div>
     <div data-role="content">
     
         <form>
-            <h3>Vorhandene Tasks</h3>
+            <h3>Vorhandene Aufgaben</h3>
             <select id="tasks-to-delete" name="tasks-to-delete">
             </select>
             <fieldset class="ui-grid-a">

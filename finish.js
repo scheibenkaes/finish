@@ -140,8 +140,11 @@ function onTaskDone () {
 
 function onInfoPageShown (event) {
     var p = $("#info-text");
+    $.mobile.loadingMessage = "Lade Informationen...";
+    $.mobile.showPageLoadingMsg();
     $.get("README.md", function(data){
         p.text(data);
+        $.mobile.hidePageLoadingMsg();
     });
 }
 
