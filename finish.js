@@ -118,6 +118,7 @@ function checkDeleteTask () {
         Finish.openTasks.splice(idx, 1);
         saveTasksToLocalStorage(Finish);
     }
+    return true;
 }
 
 function onDeleteTaskPageShown (event) {

@@ -25,9 +25,9 @@
 
 	<div data-role="content">	
         <fieldset class="ui-grid-a">
-            <div class="ui-block-a"><a href="index.html#list-page" data-theme="a" data-role="button" data-icon="grid">TODO</a></div>
+            <div class="ui-block-a"><a href="#list-page" data-theme="a" data-role="button" data-icon="grid">TODO</a></div>
             <div class="ui-block-b">
-                <a href="index.html#info" data-role="button" data-icon="info">Info</a>
+                <a href="#info" data-role="button" data-icon="info">Info</a>
             </div>
         </fieldset>
 	</div><!-- /content -->
@@ -95,7 +95,7 @@
     <div data-role="header"><h1>Neue Aufgabe anlegen</h1></div>
     <div data-role="content">
     
-        <form action="index.html#list-page" data-ajax="false" onsubmit="return checkNewTask();">
+        <form>
             <div data-role="fieldcontain">
                 <label for="new-task-name">Titel</label>
                 <input type="text" id="new-task-name" name="new-task-name" />
@@ -109,29 +109,46 @@
             </div>
             <fieldset class="ui-grid-a">
                 <div class="ui-block-a">
-                    <a href="index.html#list-page" data-role="button" data-theme="d">Abbrechen</a>
+                    <a href="#list-page" data-role="button" data-theme="d">Abbrechen</a>
                 </div>
-                <div class="ui-block-b"><button type="submit" data-theme="a">Speichern</button></div>
+                <div class="ui-block-b">
+                    <a href="javascript:onNewTaskClicked()" data-role="button" data-theme="a">Speichern</a>
+                </div>
             </fieldset>
-
         </form>
+        <script type="text/javascript">
+            function onNewTaskClicked() {
+                var ok = checkNewTask();
+                if (ok === true) {
+                    $.mobile.changePage("#list-page", {transition: 'flip'});
+                }
+            }
+        </script>
     </div>
 </div>
 <div data-role="page" id="delete-task">
     <div data-role="header"><h1>Aufgaben entfernen</h1></div>
     <div data-role="content">
     
-        <form action="index.html#list-page" data-ajax="false" onsubmit="return checkDeleteTask();">
+        <form>
             <h3>Vorhandene Tasks</h3>
             <select id="tasks-to-delete" name="tasks-to-delete">
             </select>
             <fieldset class="ui-grid-a">
                 <div class="ui-block-a">
-                    <a href="index.html#list-page" data-role="button" data-theme="d">Abbrechen</a>
+                    <a href="#list-page" data-role="button" data-theme="d">Abbrechen</a>
                 </div>
-                <div class="ui-block-b"><button type="submit" data-theme="a">L&ouml;schen</button></div>
+                <div class="ui-block-b">
+                    <a href="javascript:onDeleteTaskClicked()" data-theme="a" data-role="button">L&ouml;schen</a>
+                </div>
             </fieldset>
         </form>
+        <script type="text/javascript">
+            function onDeleteTaskClicked() {
+                checkDeleteTask();
+                $.mobile.changePage("#list-page", {transition: 'fade'});
+            }
+        </script>
     </div>
 </div>
 
