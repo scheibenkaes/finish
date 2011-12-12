@@ -17,40 +17,9 @@
 </head> 
 <body> 
 
-<div data-role="page" id="main-page">
-
-	<div data-role="header" data-theme="a">
-		<h1>Startseite</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-        <fieldset class="ui-grid-a">
-            <div class="ui-block-a"><a href="#list-page" data-theme="a" data-role="button" data-icon="grid">TODO</a></div>
-            <div class="ui-block-b">
-                <a href="#info" data-role="button" data-icon="info">Info</a>
-            </div>
-        </fieldset>
-	</div><!-- /content -->
-
-</div><!-- /page -->
-
-<div id="info" data-role="page">
-    <div data-role="header">
-        <a href="index.html" data-iconpos="notext" data-icon="home"></a>
-        <h1>Info</h1>
-    </div>
-    <div data-role="content data-role="content"">
-        <dl title="Info">
-            <dd>
-                <div id="info-text" data-theme="a"></div>
-            </dd>
-        </dl>
-    </div>
-</div>
-
 <div data-role="page" id="list-page">
 	<div data-role="header" data-position="inline">
-        <a href="index.html" data-iconpos="notext" data-icon="home"></a>
+        <a href="#main-page" data-iconpos="notext" data-icon="home"></a>
 		<h1>Meine TODOs</h1>
 	</div><!-- /header -->
 
@@ -94,6 +63,37 @@
     </div>
 
 </div><!-- /page -->
+
+<div data-role="page" id="main-page">
+
+	<div data-role="header" data-theme="a">
+		<h1>Startseite</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><a href="#list-page" data-theme="a" data-role="button" data-icon="grid">TODO</a></div>
+            <div class="ui-block-b">
+                <a href="#info" data-role="button" data-icon="info">Info</a>
+            </div>
+        </fieldset>
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div id="info" data-role="page">
+    <div data-role="header">
+        <a href="index.html" data-iconpos="notext" data-icon="home"></a>
+        <h1>Info</h1>
+    </div>
+    <div data-role="content data-role="content"">
+        <dl title="Info">
+            <dd>
+                <div id="info-text" data-theme="a"></div>
+            </dd>
+        </dl>
+    </div>
+</div>
 
 <div data-role="page" id="new-task">
     <div data-role="header"><h1>Neu</h1></div>
